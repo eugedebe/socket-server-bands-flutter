@@ -23,9 +23,19 @@
 
         socket.emit('message', { name: 'Eugenes' });
 
-        socket.on('messageFromServer', (payload) => {
-            console.log('MESSAGE FROM SERVER', payload)
+
+        socket.on('messageFromFlutter', (payload) => {
+            console.log('MESSAGE FROM Fluuter (through server)', payload)
+
         })
+
+        socket.on('active-bands', payload => {
+            console.clear();
+            console.table(payload);
+        })
+
+
+
 
 
     </script>
